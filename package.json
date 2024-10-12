@@ -32,11 +32,10 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
-    "publish": "npm publish --access public",
     "test": "vitest run",
     "version": "npm run format && git add -A src"
   },
   "type": "module",
   "types": "dist/index.d.ts",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
