@@ -1,0 +1,42 @@
+{
+  "author": "Andrew Zolotukhin <andrewzolotukhin@gmail.com>",
+  "description": "A TypeScript library for accessing the Clickhouse Cloud REST API",
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "prettier": "^3.3.3",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "api",
+    "clickhouse",
+    "client",
+    "cloud"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "dist/index.js",
+  "name": "@cleverbrush/clickhouse-cloud-api-client",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "postversion": "git push && git push --tags",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "publish": "npm publish --access public",
+    "test": "vitest run",
+    "version": "npm run format && git add -A src"
+  },
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "version": "1.0.0"
+}
