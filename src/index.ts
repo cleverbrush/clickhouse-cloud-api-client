@@ -109,15 +109,16 @@ export class ClickhouseCloudApiClient {
     );
   }
 
-  async wakeUpService(
+  async setServiceState(
     organizationId: string,
-    serviceId: string
+    serviceId: string,
+    state: "start" | "stop"
   ): Promise<ClickhouseCloudApiResponse<ServiceDetails>> {
     return this.#makeRequest<ServiceDetails>(
       `/v1/organizations/${organizationId}/services/${serviceId}/state`,
       "PATCH",
       {
-        command: "start",
+        command: state,
       }
     );
   }
